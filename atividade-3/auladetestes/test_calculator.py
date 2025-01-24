@@ -44,6 +44,16 @@ class TestCalculator(unittest.TestCase):
         response = self.client.post('/', data={'expression': 'true+false'})
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Error', response.data)
+
+    def test_exp_expression(self):
+        response = self.client.post('/', data={'expression': '2**2'})
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'4', response.data)
+
+    def test_div_expression(self):
+        response = self.client.post('/', data={'expression': '2/2'})
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'1', response.data)
     
 if __name__ == '__main__':
     unittest.main()
