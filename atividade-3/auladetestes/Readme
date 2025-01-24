@@ -1,0 +1,29 @@
+pip install coverage
+
+Rodando os testes e gerando a cobertura:
+Para rodar os testes com cobertura, use o comando:
+
+bash
+Copiar
+Editar
+coverage run -m unittest test_calculator.py
+
+Esse comando executa os testes e gera um relatório de cobertura. Para ver o relatório de cobertura, use:
+
+bash
+Copiar
+Editar
+coverage report
+Para ver um relatório mais detalhado, incluindo a visualização de cobertura no código, você pode gerar um relatório HTML:
+
+bash
+Copiar
+Editar
+coverage html
+Isso criará uma pasta htmlcov, onde você pode abrir o arquivo index.html no navegador para ver a cobertura detalhada.
+
+4. Explicação:
+setUp(): Este método é executado antes de cada teste. Aqui, ele configura um cliente de teste para enviar requisições HTTP.
+test_valid_expression: Testa se uma expressão válida (por exemplo, 2+2) retorna o resultado correto.
+test_invalid_expression: Testa se uma expressão inválida (por exemplo, divisão por zero) retorna uma mensagem de erro.
+test_empty_expression: Testa quando não há expressão para avaliar.
