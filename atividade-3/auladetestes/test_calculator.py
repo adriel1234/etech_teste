@@ -34,7 +34,16 @@ class TestCalculator(unittest.TestCase):
         response = self.client.post('/', data={'expression': 'a+b'})
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Error', response.data)
-    
 
+    # def teste_multi(self):
+    #     response = self.client.post('/', data={'expression': '5*a'})
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertIn(b'5a', response.data)
+
+    def test_boolean_value(self):
+        response = self.client.post('/', data={'expression': 'true+false'})
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Error', response.data)
+    
 if __name__ == '__main__':
     unittest.main()
